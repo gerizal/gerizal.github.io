@@ -349,9 +349,9 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bundle.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bundle.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
     <script type="text/javascript">
       var marker;
       var long = '107.5567337';
