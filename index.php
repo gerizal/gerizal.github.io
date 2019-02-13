@@ -22,7 +22,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','/analytics.js','ga');
       ga('create', 'UA-46276885-13', 'auto');
       ga('send', 'pageview');
     </script>
@@ -30,7 +30,7 @@
 
   <body>
     <!-- Preloader-->
-    <div id="loader">
+<!--     <div id="loader">
       <div class="centrize">
         <div class="v-center">
           <div id="mask">
@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- End Preloader-->
     <!-- Navbar-->
     <header id="topnav">
@@ -70,6 +70,8 @@
             </li>
             <li><a href="#contact" data-scroll="true">Hire Us</a>
             </li>
+            <li><a href="#" id="google_translate_element" data-scroll="true">Pilih Bahasa</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -79,7 +81,7 @@
       <div class="slide-wrap">
         <div class="slide-content">
           <div class="container">
-            <h6 class="mb-0">Hello, We Are.</h6>
+            <h6 class="mb-0">Hello, my name is Wage Rizal Solichin.</h6>
             <!-- Text rotator-->
             <div id="text-rotator" class="flexslider mt-15 mb-15">
               <ul class="slides">
@@ -114,8 +116,8 @@
     </section>
     <section id="about">
       <div class="container">
-<!--         <div class="title center"><i><img src="images/profile.jpg"></img></i>
- -->          <h3>About Us<span class="red-dot"></span></h3>
+        <div class="title center"><i><img src="images/profile.jpg"></img></i>
+          <h3>About Me<span class="red-dot"></span></h3>
           <hr>
         </div>
         <div class="section-content text-center">
@@ -133,7 +135,7 @@
     <section id="services" class="dark">
       <div class="container">
         <div class="title center"><i class="icon-briefcase"></i>
-          <h3>We are expert in<span class="red-dot"></span></h3>
+          <h3>I am expert in<span class="red-dot"></span></h3>
           <hr>
         </div>
         <div class="section-content">
@@ -382,6 +384,14 @@
         }
       }
 </script>
+<script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en'
+      }, 'google_translate_element');
+    }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQAs5kH9M-izJqqxprIQLqwxzJxUPxMJo&callback=initMap"></script>
 
   </body>
