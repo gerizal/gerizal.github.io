@@ -1,444 +1,1144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wage Rizal Solichin — Resume</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wage Rizal Solichin | CTO & Database Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A0E27;
+            --secondary: #1A1F3A;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --accent-teal: #14B8A6;
+            --accent-orange: #F97316;
+            --text-light: #F1F5F9;
+            --text-dim: #94A3B8;
+            --gradient-tech: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            --gradient-warm: linear-gradient(135deg, #F97316 0%, #F59E0B 100%);
+        }
 
-  :root {
-    --navy: #0e2233;
-    --teal: #1d8a7a;
-    --teal-light: #e8f5f3;
-    --teal-mid: #2aa898;
-    --accent: #f0a500;
-    --white: #ffffff;
-    --gray-100: #f7f8f9;
-    --gray-200: #eef0f2;
-    --gray-400: #9aa3ad;
-    --gray-600: #5a6472;
-    --gray-800: #2c3540;
-    --sidebar-w: 230px;
-    --page-w: 794px;
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: #d8dde3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 32px 16px;
-    -webkit-font-smoothing: antialiased;
-  }
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: var(--primary);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-  .resume {
-    width: var(--page-w);
-    max-width: 100%;
-    display: flex;
-    background: var(--white);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
-  }
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.35;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
+            animation: bgShift 30s ease-in-out infinite;
+        }
 
-  /* ── SIDEBAR ── */
-  .sidebar {
-    width: var(--sidebar-w);
-    min-width: var(--sidebar-w);
-    background: var(--navy);
-    padding: 36px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+        @keyframes bgShift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, 20px) scale(1.05); }
+        }
 
-  .name-block { margin-bottom: 20px; }
-  .name-first {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    color: var(--white);
-    line-height: 1.1;
-  }
-  .name-last {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    color: var(--white);
-    line-height: 1.1;
-    display: block;
-  }
-  .job-title {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    color: var(--teal-mid);
-    margin-top: 8px;
-    line-height: 1.4;
-  }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
 
-  .sidebar-section { margin-top: 22px; }
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            animation: fadeInDown 1s ease-out;
+        }
 
-  .sidebar-section-title {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    color: var(--teal-mid);
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    margin-bottom: 12px;
-  }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .contact-item { margin-bottom: 10px; }
-  .contact-label {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 2px;
-  }
-  .contact-value {
-    font-size: 11px;
-    color: rgba(255,255,255,0.82);
-    line-height: 1.5;
-    word-break: break-all;
-  }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+        }
 
-  .skill-cat {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--white);
-    margin-top: 10px;
-    margin-bottom: 3px;
-  }
-  .skill-val {
-    font-size: 10.5px;
-    color: rgba(255,255,255,0.62);
-    line-height: 1.55;
-  }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient-tech);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
 
-  .lang-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 7px;
-  }
-  .lang-name { font-size: 11.5px; color: var(--white); font-weight: 400; }
-  .lang-level { font-size: 10px; color: rgba(255,255,255,0.42); }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
 
-  .cert-item {
-    font-size: 10.5px;
-    color: rgba(255,255,255,0.62);
-    line-height: 1.55;
-    margin-bottom: 6px;
-  }
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-  /* ── MAIN ── */
-  .main {
-    flex: 1;
-    padding: 36px 30px 36px 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
 
-  .main-section { margin-bottom: 22px; }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
 
-  .main-section-title {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    color: var(--gray-800);
-    padding-bottom: 6px;
-    border-bottom: 1.5px solid var(--navy);
-    margin-bottom: 12px;
-  }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-  .summary-text {
-    font-size: 11.5px;
-    line-height: 1.7;
-    color: var(--gray-600);
-    text-align: justify;
-  }
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 150px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
 
-  .job { margin-bottom: 16px; }
-  .job-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 1px; }
-  .job-title-text {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gray-800);
-    line-height: 1.3;
-  }
-  .job-company {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--teal);
-    margin-bottom: 3px;
-  }
-  .job-date {
-    font-size: 10px;
-    color: var(--gray-400);
-    font-style: italic;
-    white-space: nowrap;
-    padding-top: 2px;
-  }
-  .bullets { padding-left: 0; list-style: none; margin-top: 5px; }
-  .bullets li {
-    font-size: 11px;
-    color: var(--gray-600);
-    line-height: 1.6;
-    margin-bottom: 3px;
-    padding-left: 14px;
-    position: relative;
-  }
-  .bullets li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--teal);
-    font-size: 9px;
-    line-height: 1.9;
-  }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .edu-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gray-800);
-  }
-  .edu-school {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--teal);
-    margin-bottom: 2px;
-  }
-  .edu-date {
-    font-size: 10px;
-    color: var(--gray-400);
-    font-style: italic;
-  }
+        .hero-tag {
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
 
-  /* ── PRINT ── */
-  @media print {
-    * {
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-    }
-    body { background: white; padding: 0; }
-    .resume {
-      width: 100%;
-      max-width: 100%;
-      box-shadow: none;
-      page-break-inside: avoid;
-    }
-    .job { page-break-inside: avoid; }
-  }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
 
-  @page {
-    size: A4;
-    margin: 0;
-  }
-</style>
+        .hero-title .gradient-text {
+            background: var(--gradient-tech);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 50px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient-tech);
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-dim);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.2);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section-header {
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .skill-card {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-tech);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-card:nth-child(even) {
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .skill-card:nth-child(even):hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.25);
+        }
+
+        .skill-card:nth-child(3n) {
+            border-color: rgba(20, 184, 166, 0.2);
+        }
+
+        .skill-card:nth-child(3n):hover {
+            border-color: var(--accent-teal);
+            box-shadow: 0 20px 60px rgba(20, 184, 166, 0.25);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .skill-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .skill-description {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            color: var(--accent-blue);
+            font-weight: 400;
+        }
+
+        .skill-card:nth-child(even) .skill-tag {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.3);
+            color: var(--accent-purple);
+        }
+
+        .skill-card:nth-child(3n) .skill-tag {
+            background: rgba(20, 184, 166, 0.15);
+            border-color: rgba(20, 184, 166, 0.3);
+            color: var(--accent-teal);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 60px;
+            margin-top: 60px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-blue), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px;
+            padding: 30px;
+            background: rgba(26, 31, 58, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            border-color: var(--accent-blue);
+            transform: translateX(10px);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -53px;
+            top: 40px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 20px var(--accent-blue);
+        }
+
+        .timeline-item:nth-child(even) {
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .timeline-item:nth-child(even):hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .timeline-item:nth-child(even)::before {
+            background: var(--accent-purple);
+            box-shadow: 0 0 20px var(--accent-purple);
+        }
+
+        .timeline-year {
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            color: var(--accent-purple);
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .timeline-company {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        .timeline-description {
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .timeline-highlights {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .highlight::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .timeline-item:nth-child(even) .highlight::before {
+            color: var(--accent-purple);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin: 80px 0;
+            padding: 60px;
+            background: rgba(26, 31, 58, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--gradient-tech);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            min-width: 30px;
+        }
+
+        .contact-item:nth-child(even) .contact-icon {
+            color: var(--accent-purple);
+        }
+
+        .contact-details h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+
+        .contact-details p {
+            color: var(--text-dim);
+        }
+
+        .contact-details a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--text-light);
+        }
+
+        .contact-item:nth-child(even) .contact-details a {
+            color: var(--accent-purple);
+        }
+
+        .contact-form {
+            background: rgba(26, 31, 58, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(10, 14, 39, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        footer p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 60px 0 80px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                padding: 40px 20px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .timeline {
+                padding-left: 40px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item::before {
+                left: -43px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cursor Effect */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+            mix-blend-mode: screen;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent-blue);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            mix-blend-mode: screen;
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
 
-<div class="resume">
+    <div class="container">
+        <header>
+            <nav class="nav">
+                <div class="logo">WRS</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="cv.html" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
+        </header>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="name-block">
-      <div class="name-first">Wage Rizal</div>
-      <span class="name-last">Solichin</span>
-      <div class="job-title">Build People<br>Positive Power</div>
+        <section class="hero">
+            <div class="hero-tag">DATABASE ARCHITECT & SYSTEM DESIGNER</div>
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Wage Rizal</span><br>
+                Solichin
+            </h1>
+            <p class="hero-subtitle">
+                Chief Technology Officer specializing in database architecture, scalable system design, and leading high-performance engineering teams. Transforming complex data challenges into elegant, efficient solutions.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#experience" class="btn btn-secondary">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-header fade-in">
+                <div class="section-tag">ABOUT ME</div>
+                <h2 class="section-title">Building the Future of Technology</h2>
+                <p class="section-description">
+                    With 8+ years of progressive experience in software engineering, I specialize in designing robust database architectures and scalable systems that drive business growth. Currently leading technical strategy at ASTRNT, where I architect solutions serving 100+ enterprise clients and manage infrastructure handling 700,000+ video interview sessions.
+                </p>
+            </div>
+
+            <div class="stats fade-in">
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">700K+</div>
+                    <div class="stat-label">Sessions Handled</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.95%</div>
+                    <div class="stat-label">System Uptime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header fade-in">
+                <div class="section-tag">EXPERTISE</div>
+                <h2 class="section-title">Core Competencies</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">🗄️</div>
+                    <h3 class="skill-title">Database Architecture</h3>
+                    <p class="skill-description">
+                        Designing scalable database solutions with advanced optimization, handling high-volume workloads with 65% performance improvements.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">🏗️</div>
+                    <h3 class="skill-title">System Architecture</h3>
+                    <p class="skill-description">
+                        Architecting microservices infrastructure reducing latency by 45% while achieving 99.95% availability through robust monitoring frameworks.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">API Design</span>
+                        <span class="skill-tag">Scalability</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">☁️</div>
+                    <h3 class="skill-title">Cloud Infrastructure</h3>
+                    <p class="skill-description">
+                        Implementing cloud solutions with intelligent resource allocation, achieving 35% cost reduction while maintaining high performance.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">👥</div>
+                    <h3 class="skill-title">Technical Leadership</h3>
+                    <p class="skill-description">
+                        Leading cross-functional teams of 10+ engineers and QA, implementing performance systems achieving 92% satisfaction and 40% velocity improvement.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Team Management</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Mentoring</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">🔒</div>
+                    <h3 class="skill-title">Security & Compliance</h3>
+                    <p class="skill-description">
+                        Maintaining ISO27001 certification through rigorous security architecture and comprehensive data governance policies.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ISO27001</span>
+                        <span class="skill-tag">GDPR</span>
+                        <span class="skill-tag">Data Privacy</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">⚡</div>
+                    <h3 class="skill-title">Full-Stack Development</h3>
+                    <p class="skill-description">
+                        Building end-to-end solutions with modern frameworks, from responsive frontends to robust backend APIs and databases.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header fade-in">
+                <div class="section-tag">CAREER JOURNEY</div>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-year">JANUARY 2023 - PRESENT</div>
+                    <h3 class="timeline-title">Chief Technology Officer</h3>
+                    <div class="timeline-company">ASTRNT | Bandung, West Java, Indonesia</div>
+                    <p class="timeline-description">
+                        Leading comprehensive technology strategy and infrastructure development for enterprise video interview platform serving 100+ clients globally.
+                    </p>
+                    <div class="timeline-highlights">
+                        <div class="highlight">Architected scalable database solutions handling 700,000+ video interview sessions with 65% response time improvement</div>
+                        <div class="highlight">Led development team of 10+ engineers achieving 92% satisfaction and 40% delivery velocity improvement</div>
+                        <div class="highlight">Reduced cloud infrastructure costs by 35% through intelligent resource allocation and query optimization</div>
+                        <div class="highlight">Maintained ISO27001 certification ensuring enterprise-grade security and compliance</div>
+                        <div class="highlight">Designed microservices architecture achieving 99.95% uptime with 45% latency reduction</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-year">FEBRUARY 2020 - JANUARY 2023</div>
+                    <h3 class="timeline-title">Technical Lead</h3>
+                    <div class="timeline-company">ASTRNT | Bandung, West Java, Indonesia</div>
+                    <p class="timeline-description">
+                        Provided technical oversight and leadership for software development team, establishing engineering standards and best practices.
+                    </p>
+                    <div class="timeline-highlights">
+                        <div class="highlight">Designed database schemas for complex video interview workflows with optimized multi-tenant architecture</div>
+                        <div class="highlight">Reduced production defects by 60% through comprehensive code review and testing frameworks</div>
+                        <div class="highlight">Achieved 70% query response time improvement through systematic optimization initiatives</div>
+                        <div class="highlight">Mentored team of 8 engineers on advanced database concepts and scalable architecture patterns</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-year">FEBRUARY 2019 - FEBRUARY 2020</div>
+                    <h3 class="timeline-title">Fullstack Developer</h3>
+                    <div class="timeline-company">ASTRNT | Bandung, West Java, Indonesia</div>
+                    <p class="timeline-description">
+                        Developed full-stack web applications using Laravel and React.js, focusing on database design and API development.
+                    </p>
+                    <div class="timeline-highlights">
+                        <div class="highlight">Designed normalized database schemas with proper indexing strategies ensuring data integrity</div>
+                        <div class="highlight">Integrated third-party APIs expanding platform capabilities while maintaining security standards</div>
+                        <div class="highlight">Contributed to architectural decisions for database migration strategies and API versioning</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-year">2016 - 2019</div>
+                    <h3 class="timeline-title">Web Developer</h3>
+                    <div class="timeline-company">Various Organizations</div>
+                    <p class="timeline-description">
+                        Progressive experience across multiple organizations developing web applications using Laravel, CodeIgniter, and PHP frameworks for e-commerce, payment systems, and enterprise solutions.
+                    </p>
+                    <div class="timeline-highlights">
+                        <div class="highlight">Built database-driven applications including e-commerce platforms and payment systems (JabarQR)</div>
+                        <div class="highlight">Gained foundational expertise in relational database design and SQL optimization</div>
+                        <div class="highlight">Developed full-stack solutions across diverse industries and technical requirements</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-header fade-in">
+                <div class="section-tag">LET'S CONNECT</div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    Interested in collaborating or discussing technology architecture? I'm always open to connecting with fellow tech enthusiasts and exploring new opportunities.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:wgerizal@gmail.com">wgerizal@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Bandung, West Java, Indonesia</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/wage-rizal-solichin" target="_blank">linkedin.com/in/wage-rizal-solichin</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p><a href="https://gerizal.github.io" target="_blank">gerizal.github.io</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Contact</div>
-      <div class="contact-item">
-        <div class="contact-label">Email</div>
-        <div class="contact-value">wgerizal@gmail.com</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Phone</div>
-        <div class="contact-value">+62 856 0311 7133</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Bandung, Indonesia</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">LinkedIn</div>
-        <div class="contact-value">linkedin.com/in/wage-rizal-solichin</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Portfolio</div>
-        <div class="contact-value">gerizal.github.io</div>
-      </div>
-    </div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Technical Skills</div>
-
-      <div class="skill-cat">Backend</div>
-      <div class="skill-val">PHP (Laravel, CodeIgniter), Node.js, Python, Ruby on Rails, C#, REST APIs, Microservices, Git</div>
-
-      <div class="skill-cat">Frontend</div>
-      <div class="skill-val">JavaScript, React, Next.js, Nuxt.js, Vue.js, HTML5, CSS3, Tailwind, shadcn/ui</div>
-
-      <div class="skill-cat">Databases</div>
-      <div class="skill-val">MySQL, MongoDB, Redis, Elasticsearch, Query Optimization, Indexing &amp; Sharding</div>
-
-      <div class="skill-cat">Cloud &amp; DevOps</div>
-      <div class="skill-val">AWS (EC2, RDS, S3), GCP, Azure, Docker, CI/CD, Linux Administration, OpenVPN</div>
-
-      <div class="skill-cat">AI &amp; Agents</div>
-      <div class="skill-val">Claude API Integration, Multi-Agent Systems, LLM Workflow Design, Prompt Engineering</div>
-
-      <div class="skill-cat">Practices</div>
-      <div class="skill-val">System Architecture, Agile/Scrum, Code Review, Technical Mentoring, ISO 27001</div>
-    </div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Languages</div>
-      <div class="lang-row">
-        <span class="lang-name">Indonesian</span>
-        <span class="lang-level">Native</span>
-      </div>
-      <div class="lang-row">
-        <span class="lang-name">English</span>
-        <span class="lang-level">Professional</span>
-      </div>
-    </div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-section-title">Certifications</div>
-      <div class="cert-item">JavaScript (Basic) — HackerRank</div>
-      <div class="cert-item">SQL (Basic) — HackerRank</div>
-      <div class="cert-item">Computer Network Competency — PT Len Industri</div>
-      <div class="cert-item">Teal Agility Certification — Agile Practices</div>
-    </div>
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <main class="main">
-
-    <div class="main-section">
-      <div class="main-section-title">Professional Summary</div>
-      <p class="summary-text">Fullstack Engineer and product builder with 8+ years of hands-on experience architecting scalable web applications across the entire stack — from database design to production deployment. Proven track record shipping mission-critical SaaS platforms with Laravel, Node.js, Python, React, and Next.js, backed by distributed systems expertise across MySQL, MongoDB, Redis, and Elasticsearch. Currently founding socialrush.id, where I build the platform end-to-end, and previously led engineering at ASTRNT through ISO 27001 certification and 40% productivity gains. Seeking to return to a hands-on engineering role, bringing rare depth: the technical rigor of a senior builder combined with the product sense and delivery discipline of someone who has owned systems from zero to scale.</p>
-    </div>
-
-    <div class="main-section">
-      <div class="main-section-title">Professional Experience</div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title-text">Founder &amp; Builder</div>
-            <div class="job-company">socialrush.id</div>
-          </div>
-          <div class="job-date">Feb 2026 – Present · Bandung, Indonesia</div>
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/wage-rizal-solichin/" target="_blank" title="LinkedIn">💼</a>
+                <a href="https://github.com/gerizal" target="_blank" title="GitHub">💻</a>
+                <a href="mailto:wgerizal@gmail.com" title="Email">📧</a>
+            </div>
+            <p>&copy; 2026 Wage Rizal Solichin. Crafted with precision and passion.</p>
         </div>
-        <ul class="bullets">
-          <li>Founded and built end-to-end a platform that helps creators, brands, and businesses accelerate social media growth through scalable engagement solutions.</li>
-          <li>Architected and coded the entire stack solo — from database schema and backend APIs to frontend UI and deployment pipeline — proving ability to ship production systems independently.</li>
-          <li>Owning product strategy, growth systems, and platform development for the creator economy and digital marketing technology space.</li>
-        </ul>
-      </div>
+    </footer>
 
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title-text">Chief Technology Officer</div>
-            <div class="job-company">PT Astronaut Teknologi Indonesia (ASTRNT)</div>
-          </div>
-          <div class="job-date">Jan 2023 – Present · Bandung, Indonesia</div>
-        </div>
-        <ul class="bullets">
-          <li>Architected and shipped core platform modules for an AI-powered assessment and interview SaaS, including candidate progression pipelines, AI-assisted job creation, and smart notification systems serving enterprise clients.</li>
-          <li>Hands-on engineered system architecture using a polyglot stack: Laravel, Node.js, and Nuxt.js for services and frontend; Python for AI/ML integrations; Elasticsearch for search; Redis for caching; and MongoDB alongside MySQL for hybrid data needs.</li>
-          <li>Integrated Claude API into production workflows for intelligent candidate evaluation and content generation, engineering robust retry logic and failover handling for high-availability AI features.</li>
-          <li>Led ISO 27001:2022 certification effort — defined security controls, infrastructure hardening, and engineering processes that passed external surveillance audit on first attempt.</li>
-          <li>Grew engineering team productivity by 40% through introducing code review standards, sprint planning discipline, and mentoring developers on database architecture and scalable patterns.</li>
-          <li>Owned system performance, availability, and cost efficiency end-to-end — ensuring client-facing products met latency and uptime SLAs.</li>
-        </ul>
-      </div>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title-text">Technical Lead</div>
-            <div class="job-company">PT Astronaut Teknologi Indonesia (ASTRNT)</div>
-          </div>
-          <div class="job-date">Feb 2020 – Jan 2023 · Remote (Bandung/Jakarta)</div>
-        </div>
-        <ul class="bullets">
-          <li>Led engineering execution for ASTRNT's mobile-first assessment platform serving recruiters, universities, and enterprise employers across Southeast Asia.</li>
-          <li>Designed and implemented core backend services in Laravel and Node.js, including video interview processing, candidate scoring engines, and distribution workflows.</li>
-          <li>Drove migration to cloud-native infrastructure on AWS, setting up VPC networking, auto-scaling, and OpenVPN for secure internal access — reducing infrastructure incidents significantly.</li>
-          <li>Conducted thorough code reviews, enforced coding standards, and established testing processes to catch issues early in the development cycle.</li>
-          <li>Mentored junior and mid-level developers on Laravel best practices, React/Next.js patterns, and database optimization.</li>
-        </ul>
-      </div>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title-text">Fullstack Developer</div>
-            <div class="job-company">PT Astronaut Teknologi Indonesia (ASTRNT)</div>
-          </div>
-          <div class="job-date">Feb 2019 – Feb 2020 · Bandung, Indonesia</div>
-        </div>
-        <ul class="bullets">
-          <li>Built end-to-end features across Laravel backend and React frontend for ASTRNT's early-stage assessment platform.</li>
-          <li>Designed and optimized database schemas, indexing strategies, and queries for efficient data retrieval at scale.</li>
-          <li>Integrated third-party services (email, analytics, video processing) and identified performance bottlenecks across both frontend and backend during product-market-fit iterations.</li>
-        </ul>
-      </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title-text">Freelance Fullstack Developer</div>
-            <div class="job-company">langgan.id · Selected Freelance Projects</div>
-          </div>
-          <div class="job-date">Aug 2019 – Dec 2019 · Remote</div>
-        </div>
-        <ul class="bullets">
-          <li>Built and maintained langgan.id using Laravel and React — delivered full lifecycle from requirements to production.</li>
-        </ul>
-      </div>
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title-text">Web Developer (Multiple Roles)</div>
-            <div class="job-company">PT Shirobyte · .NETXPERT (Malaysia) · PT Smooets · PT Sarana Pancakarya Nusa · and others</div>
-          </div>
-          <div class="job-date">2016 – 2019 · Indonesia &amp; Malaysia</div>
-        </div>
-        <ul class="bullets">
-          <li>Delivered commercial web applications across multiple agencies, including jabarqr.id (QR payment platform, CodeIgniter), Dreams DBKL and SSP DBKL (government projects in Selangor, Malaysia, Laravel), and butikdukomsel.com (e-commerce, Prestashop/Zend PHP).</li>
-          <li>Built and maintained book marketplace platform for PT Sarana Pancakarya Nusa using Laravel and CodeIgniter.</li>
-          <li>Developed enterprise and government internal tools using C# (.NET Framework / ASP.NET MVC) at .NETXPERT Malaysia, delivering desktop and web-based solutions for government clients in Selangor.</li>
-          <li>Utilized Ruby on Rails for rapid prototyping and web application development at PT Smooets, contributing to early-stage product builds and API-driven features.</li>
-          <li>Gained broad exposure to PHP ecosystems, MySQL, and modern deployment practices across e-commerce, government, and early-stage startup contexts.</li>
-        </ul>
-      </div>
-    </div>
+        // Custom cursor
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
 
-    <div class="main-section">
-      <div class="main-section-title">Education</div>
-      <div class="edu-title">Bachelor of Information Technology</div>
-      <div class="edu-school">Universitas Jenderal Achmad Yani (Unjani)</div>
-      <div class="edu-date">2012 – 2016 · Cimahi, West Java</div>
-    </div>
+        document.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+            
+            cursorOutline.style.left = (e.clientX - 20) + 'px';
+            cursorOutline.style.top = (e.clientY - 20) + 'px';
+        });
 
-  </main>
-</div>
+        // Cursor hover effects
+        document.querySelectorAll('a, button, .skill-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.style.transform = 'scale(1.5)';
+                cursorDot.style.transform = 'scale(1.5)';
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.style.transform = 'scale(1)';
+                cursorDot.style.transform = 'scale(1)';
+            });
+        });
 
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form. Please reach out directly via email at wgerizal@gmail.com');
+            e.target.reset();
+        });
+
+        // Stagger animations for cards
+        document.querySelectorAll('.skill-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
 </body>
 </html>
