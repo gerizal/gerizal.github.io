@@ -224,6 +224,10 @@
 
   /* ── PRINT ── */
   @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
     body { background: white; padding: 0; }
     .resume {
       width: 100%;
@@ -232,10 +236,6 @@
       page-break-inside: avoid;
     }
     .job { page-break-inside: avoid; }
-    .sidebar {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
   }
 
   @page {
