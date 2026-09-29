@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wage Rizal Solichin — Player Profile</title>
+  <meta name="description" content="Wage Rizal Solichin — Senior Fullstack Engineer from Bandung, Indonesia. 10+ years building scalable SaaS with Laravel, Node.js, Python, React and Next.js. Former CTO at ASTRNT, founder of socialrush.id." />
+  <meta property="og:title" content="Wage Rizal Solichin — Senior Fullstack Engineer" />
+  <meta property="og:description" content="10+ years building scalable SaaS. Former CTO at ASTRNT, founder of socialrush.id." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gerizal.github.io/" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='%230b0f1a'/><rect x='3' y='3' width='10' height='10' fill='%2338bdf8'/><rect x='5' y='6' width='2' height='2' fill='%230b0f1a'/><rect x='9' y='6' width='2' height='2' fill='%230b0f1a'/><rect x='5' y='10' width='6' height='1' fill='%230b0f1a'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <!-- ============ HUD ============ -->
+  <header class="hud" id="hud">
+    <a href="#top" class="hud-brand" aria-label="Back to top">
+      <span class="hud-lv">LV <b data-level>10</b></span>
+      <span class="hud-name">GERIZAL</span>
+    </a>
+    <div class="hud-xp" title="Your visitor XP — explore the page to level up">
+      <span class="hud-xp-label">YOUR XP</span>
+      <div class="bar bar-xp"><span id="xpFill"></span></div>
+      <span class="hud-xp-num"><b id="xpNum">0</b>/<span id="xpMax">700</span></span>
+    </div>
+    <nav class="hud-nav" aria-label="Sections">
+      <a href="#profile">Profile</a>
+      <a href="#skills">Skills</a>
+      <a href="#quests">Quests</a>
+      <a href="#achievements">Trophies</a>
+      <a href="#contact">Co-op</a>
+    </nav>
+    <div class="hud-actions">
+      <button class="icon-btn" id="soundBtn" aria-pressed="false" title="Toggle sound">🔇</button>
+      <a class="btn btn-gold btn-sm" href="cv/Wage_Rizal_Solichin_CV.pdf" download="Wage_Rizal_Solichin_CV.pdf" data-download>⬇ CV</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO / CHARACTER ============ -->
+    <section class="hero" id="profile" data-area="Character Select">
+      <div class="hero-card panel">
+        <div class="avatar-wrap">
+          <div class="avatar" id="avatar" role="img" aria-label="Pixel avatar of Wage Rizal Solichin"></div>
+          <div class="avatar-floor"></div>
+          <span class="class-tag">CLASS: FULLSTACK MAGE</span>
+        </div>
+
+        <div class="hero-info">
+          <p class="eyebrow">▶ PLAYER 1</p>
+          <h1>Wage Rizal Solichin</h1>
+          <p class="role">Senior Fullstack Engineer</p>
+
+          <div class="vitals">
+            <div class="vital">
+              <span class="vital-k">HP</span>
+              <div class="bar bar-hp"><span style="--w:100%"></span></div>
+              <span class="vital-v">10+ yrs</span>
+            </div>
+            <div class="vital">
+              <span class="vital-k">MP</span>
+              <div class="bar bar-mp"><span style="--w:92%"></span></div>
+              <span class="vital-v">AI-ready</span>
+            </div>
+          </div>
+
+          <ul class="meta">
+            <li><span>📍</span> Bandung, Indonesia</li>
+            <li><span>🏰</span> Guild: socialrush.id (Founder)</li>
+            <li><span>🗣</span> Indonesian (Native) · English (Professional)</li>
+          </ul>
+
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="cv/Wage_Rizal_Solichin_CV.pdf" download="Wage_Rizal_Solichin_CV.pdf" data-download>
+              <span class="chest">🎁</span> Download CV
+            </a>
+            <a class="btn btn-ghost" href="#contact">Invite to Party</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog panel" aria-label="Summary">
+        <div class="dialog-head"><span class="npc">RIZAL</span> says:</div>
+        <p id="dialogText">
+          Fullstack Engineer and product builder with 10+ years of hands-on experience architecting scalable
+          web applications across the entire stack — from database design to production deployment. I've shipped
+          mission-critical SaaS platforms with Laravel, Node.js, Python, React and Next.js, backed by distributed
+          systems expertise across MySQL, MongoDB, Redis and Elasticsearch. I spent 8 years at ASTRNT — progressing
+          from Fullstack Developer to CTO — leading engineering through ISO 27001 certification and 40% productivity
+          gains. Now I'm founding socialrush.id, and I'm looking to return to a hands-on engineering role.
+        </p>
+        <span class="dialog-next" aria-hidden="true">▼</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat panel"><b data-count="10" data-suffix="+">0</b><span>Years XP</span></div>
+        <div class="stat panel"><b data-count="40" data-suffix="%">0</b><span>Team Productivity Buff</span></div>
+        <div class="stat panel"><b data-count="6">0</b><span>Class Changes</span></div>
+        <div class="stat panel"><b data-count="1" data-suffix="st">0</b><span>Try ISO 27001 Audit Pass</span></div>
+      </div>
+    </section>
+
+    <!-- ============ ATTRIBUTES + SKILL TREE ============ -->
+    <section id="skills" data-area="Skill Tree">
+      <h2 class="section-title"><span>02</span> Skill Tree</h2>
+      <p class="section-sub">Attributes allocated across a decade of play. Hover a node to inspect.</p>
+
+      <div class="skills-grid">
+        <div class="panel attributes">
+          <h3 class="panel-title">Attributes</h3>
+          <ul class="attr-list">
+            <li><span>Backend</span><div class="bar bar-attr"><span style="--w:95%"></span></div><b>95</b></li>
+            <li><span>Databases</span><div class="bar bar-attr"><span style="--w:92%"></span></div><b>92</b></li>
+            <li><span>Leadership</span><div class="bar bar-attr"><span style="--w:90%"></span></div><b>90</b></li>
+            <li><span>Frontend</span><div class="bar bar-attr"><span style="--w:85%"></span></div><b>85</b></li>
+            <li><span>Cloud &amp; DevOps</span><div class="bar bar-attr"><span style="--w:83%"></span></div><b>83</b></li>
+            <li><span>AI &amp; Agents</span><div class="bar bar-attr"><span style="--w:80%"></span></div><b>80</b></li>
+          </ul>
+        </div>
+
+        <div class="tree">
+          <div class="branch panel" style="--c:var(--cyan)">
+            <h3 class="branch-title">⚔ Backend</h3>
+            <ul class="nodes">
+              <li>PHP · Laravel</li><li>CodeIgniter</li><li>Node.js</li><li>Python</li><li>REST APIs</li><li>Microservices</li><li>Git</li>
+            </ul>
+          </div>
+          <div class="branch panel" style="--c:var(--purple)">
+            <h3 class="branch-title">✨ Frontend</h3>
+            <ul class="nodes">
+              <li>JavaScript</li><li>React</li><li>Next.js</li><li>Nuxt.js</li><li>Vue.js</li><li>HTML5</li><li>CSS3</li><li>Tailwind</li><li>shadcn/ui</li>
+            </ul>
+          </div>
+          <div class="branch panel" style="--c:var(--green)">
+            <h3 class="branch-title">🛡 Databases</h3>
+            <ul class="nodes">
+              <li>MySQL</li><li>MongoDB</li><li>Redis</li><li>Elasticsearch</li><li>Query Optimization</li><li>Indexing &amp; Sharding</li>
+            </ul>
+          </div>
+          <div class="branch panel" style="--c:var(--gold)">
+            <h3 class="branch-title">☁ Cloud &amp; DevOps</h3>
+            <ul class="nodes">
+              <li>AWS (EC2, RDS, S3)</li><li>GCP</li><li>Azure</li><li>Docker</li><li>CI/CD</li><li>Linux Admin</li><li>OpenVPN</li>
+            </ul>
+          </div>
+          <div class="branch panel" style="--c:var(--pink)">
+            <h3 class="branch-title">🔮 AI &amp; Agents</h3>
+            <ul class="nodes">
+              <li>Claude API Integration</li><li>Multi-Agent Systems</li><li>LLM Workflow Design</li><li>Prompt Engineering</li>
+            </ul>
+          </div>
+          <div class="branch panel" style="--c:var(--red)">
+            <h3 class="branch-title">📜 Practices</h3>
+            <ul class="nodes">
+              <li>System Architecture</li><li>Agile / Scrum</li><li>Code Review</li><li>Technical Mentoring</li><li>ISO 27001</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUEST LOG ============ -->
+    <section id="quests" data-area="Quest Log">
+      <h2 class="section-title"><span>03</span> Quest Log</h2>
+      <p class="section-sub">Career campaign, newest first. Open a quest to read the objectives.</p>
+
+      <ol class="quests">
+        <li class="quest active">
+          <div class="quest-node" aria-hidden="true"></div>
+          <details class="panel" open>
+            <summary>
+              <div class="quest-top">
+                <span class="badge badge-live">● ACTIVE</span>
+                <span class="rank rank-s">S</span>
+              </div>
+              <h3>Founder &amp; Builder</h3>
+              <p class="quest-org">socialrush.id</p>
+              <p class="quest-date">Feb 2026 – Present · Bandung, Indonesia</p>
+            </summary>
+            <ul class="objectives">
+              <li>Founded and built end-to-end a platform that helps creators, brands and businesses accelerate social media growth through scalable engagement solutions.</li>
+              <li>Architected and coded the entire stack solo — from database schema and backend APIs to frontend UI and deployment pipeline.</li>
+              <li>Owning product strategy, growth systems and platform development for the creator economy and digital marketing tech space.</li>
+            </ul>
+            <div class="loot"><span>Solo Raid</span><span>Product Strategy</span><span>Full Stack</span></div>
+          </details>
+        </li>
+
+        <li class="quest active">
+          <div class="quest-node" aria-hidden="true"></div>
+          <details class="panel" open>
+            <summary>
+              <div class="quest-top">
+                <span class="badge badge-live">● ACTIVE</span>
+                <span class="rank rank-s">S</span>
+              </div>
+              <h3>Chief Technology Officer</h3>
+              <p class="quest-org">PT Astronaut Teknologi Indonesia (ASTRNT)</p>
+              <p class="quest-date">Jan 2023 – Present · Bandung, Indonesia</p>
+            </summary>
+            <ul class="objectives">
+              <li>Architected and shipped core modules for an AI-powered assessment &amp; interview SaaS: candidate progression pipelines, AI-assisted job creation and smart notifications for enterprise clients.</li>
+              <li>Built and operated Puppeteer scraping pipelines for fresh-graduate LinkedIn job postings, feeding awalkarir.id — an acquired brand (formerly Popskul) integrated into ASTRNT.</li>
+              <li>Hands-on polyglot architecture: Laravel, Node.js &amp; Nuxt.js; Python for AI/ML; Elasticsearch for search; Redis for caching; MongoDB alongside MySQL.</li>
+              <li>Integrated the Claude API into production for candidate evaluation and content generation, with robust retry logic and failover for high-availability AI features.</li>
+              <li>Led ISO 27001:2022 certification — security controls, infrastructure hardening and processes that passed the external surveillance audit on first attempt.</li>
+              <li>Grew engineering productivity by 40% via code review standards, sprint planning discipline and mentoring on database architecture and scalable patterns.</li>
+              <li>Owned system performance, availability and cost efficiency end-to-end, meeting latency and uptime SLAs.</li>
+            </ul>
+            <div class="loot"><span>ISO 27001</span><span>+40% Productivity</span><span>Claude API</span><span>Elasticsearch</span></div>
+          </details>
+        </li>
+
+        <li class="quest">
+          <div class="quest-node" aria-hidden="true"></div>
+          <details class="panel">
+            <summary>
+              <div class="quest-top">
+                <span class="badge badge-done">✔ COMPLETED</span>
+                <span class="rank rank-a">A</span>
+              </div>
+              <h3>Technical Lead</h3>
+              <p class="quest-org">PT Astronaut Teknologi Indonesia (ASTRNT)</p>
+              <p class="quest-date">Feb 2020 – Jan 2023 · Remote (Bandung/Jakarta)</p>
+            </summary>
+            <ul class="objectives">
+              <li>Led engineering for ASTRNT's mobile-first assessment platform serving recruiters, universities and enterprise employers across Southeast Asia.</li>
+              <li>Designed core backend services in Laravel and Node.js: video interview processing, candidate scoring engines and distribution workflows.</li>
+              <li>Drove migration to cloud-native AWS: VPC networking, auto-scaling and OpenVPN for secure internal access — significantly reducing incidents.</li>
+              <li>Ran thorough code reviews, enforced coding standards and established testing processes.</li>
+              <li>Mentored junior and mid-level developers on Laravel, React/Next.js patterns and database optimization.</li>
+            </ul>
+            <div class="loot"><span>AWS Migration</span><span>Mentoring</span><span>Video Processing</span></div>
+          </details>
+        </li>
+
+        <li class="quest">
+          <div class="quest-node" aria-hidden="true"></div>
+          <details class="panel">
+            <summary>
+              <div class="quest-top">
+                <span class="badge badge-done">✔ COMPLETED</span>
+                <span class="rank rank-a">A</span>
+              </div>
+              <h3>Fullstack Developer</h3>
+              <p class="quest-org">PT Astronaut Teknologi Indonesia (ASTRNT)</p>
+              <p class="quest-date">Feb 2019 – Feb 2020 · Bandung, Indonesia</p>
+            </summary>
+            <ul class="objectives">
+              <li>Built end-to-end features across the Laravel backend and React frontend of ASTRNT's early-stage assessment platform.</li>
+              <li>Designed and optimized database schemas, indexing strategies and queries for efficient retrieval at scale.</li>
+              <li>Integrated third-party services (email, analytics, video processing) and removed performance bottlenecks during product-market-fit iterations.</li>
+            </ul>
+            <div class="loot"><span>Laravel</span><span>React</span><span>Schema Design</span></div>
+          </details>
+        </li>
+
+        <li class="quest side">
+          <div class="quest-node" aria-hidden="true"></div>
+          <details class="panel">
+            <summary>
+              <div class="quest-top">
+                <span class="badge badge-side">◆ SIDE QUEST</span>
+                <span class="rank rank-b">B</span>
+              </div>
+              <h3>Freelance Fullstack Developer</h3>
+              <p class="quest-org">langgan.id · Selected Freelance Projects</p>
+              <p class="quest-date">Aug 2019 – Dec 2019 · Remote</p>
+            </summary>
+            <ul class="objectives">
+              <li>Built and maintained langgan.id using Laravel and React — full lifecycle from requirements to production.</li>
+            </ul>
+            <div class="loot"><span>Laravel</span><span>React</span></div>
+          </details>
+        </li>
+
+        <li class="quest">
+          <div class="quest-node" aria-hidden="true"></div>
+          <details class="panel">
+            <summary>
+              <div class="quest-top">
+                <span class="badge badge-done">✔ COMPLETED</span>
+                <span class="rank rank-b">B</span>
+              </div>
+              <h3>Web Developer (Multiple Roles)</h3>
+              <p class="quest-org">PT Shirobyte · .NETXPERT (Malaysia) · PT Smooets · PT Sarana Pancakarya Nusa · and others</p>
+              <p class="quest-date">2016 – 2019 · Indonesia &amp; Malaysia</p>
+            </summary>
+            <ul class="objectives">
+              <li>Delivered commercial web apps across agencies: jabarqr.id (QR payments, CodeIgniter), Dreams DBKL &amp; SSP DBKL (government projects in Selangor, Malaysia, Laravel) and butikdukomsel.com (e-commerce, Prestashop/Zend PHP).</li>
+              <li>Built and maintained a book marketplace platform for PT Sarana Pancakarya Nusa using Laravel and CodeIgniter.</li>
+              <li>Broad exposure to PHP ecosystems, MySQL and modern deployment across e-commerce, government and startups.</li>
+            </ul>
+            <div class="loot"><span>GovTech</span><span>E-commerce</span><span>Payments</span></div>
+          </details>
+        </li>
+
+        <li class="quest tutorial">
+          <div class="quest-node" aria-hidden="true"></div>
+          <details class="panel">
+            <summary>
+              <div class="quest-top">
+                <span class="badge badge-done">✔ TUTORIAL CLEARED</span>
+                <span class="rank rank-b">🎓</span>
+              </div>
+              <h3>Bachelor of Information Technology</h3>
+              <p class="quest-org">Universitas Jenderal Achmad Yani (Unjani)</p>
+              <p class="quest-date">2012 – 2016 · Cimahi, West Java</p>
+            </summary>
+            <ul class="objectives">
+              <li>Foundations in software engineering, networks and information systems.</li>
+            </ul>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements" data-area="Trophy Room">
+      <h2 class="section-title"><span>04</span> Trophy Room</h2>
+      <p class="section-sub">Achievements earned in the field, plus badges collected.</p>
+
+      <div class="trophies">
+        <div class="trophy panel"><div class="trophy-icon">🛡</div><div><h3>Audit Flawless</h3><p>Passed ISO 27001:2022 external surveillance audit on first attempt.</p></div><span class="rarity legendary">LEGENDARY</span></div>
+        <div class="trophy panel"><div class="trophy-icon">👑</div><div><h3>From Dev to CTO</h3><p>Rose from Fullstack Developer to CTO within one company over 8 years.</p></div><span class="rarity legendary">LEGENDARY</span></div>
+        <div class="trophy panel"><div class="trophy-icon">⚡</div><div><h3>Party Buff +40%</h3><p>Raised engineering team productivity by 40%.</p></div><span class="rarity epic">EPIC</span></div>
+        <div class="trophy panel"><div class="trophy-icon">🤖</div><div><h3>Summoner of Claude</h3><p>Shipped Claude API in production with retry &amp; failover.</p></div><span class="rarity epic">EPIC</span></div>
+        <div class="trophy panel"><div class="trophy-icon">🏗</div><div><h3>Solo Raid</h3><p>Built socialrush.id end-to-end, alone.</p></div><span class="rarity epic">EPIC</span></div>
+        <div class="trophy panel"><div class="trophy-icon">🌏</div><div><h3>Cross-Border</h3><p>Delivered government projects in Selangor, Malaysia.</p></div><span class="rarity rare">RARE</span></div>
+      </div>
+
+      <h3 class="sub-title">Badges &amp; Certifications</h3>
+      <div class="badges">
+        <div class="cert"><span class="cert-icon">JS</span><div><b>JavaScript (Basic)</b><small>HackerRank</small></div></div>
+        <div class="cert"><span class="cert-icon">SQL</span><div><b>SQL (Basic)</b><small>HackerRank</small></div></div>
+        <div class="cert"><span class="cert-icon">NET</span><div><b>Computer Network Competency</b><small>PT Len Industri</small></div></div>
+        <div class="cert"><span class="cert-icon">AGL</span><div><b>Teal Agility Certification</b><small>Agile Practices</small></div></div>
+      </div>
+
+      <h3 class="sub-title">Your Achievements <small>(yes, you — the visitor)</small></h3>
+      <div class="visitor-ach" id="visitorAch"></div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" data-area="Co-op Lobby">
+      <div class="panel contact-box">
+        <p class="eyebrow blink">▶ PLAYER 2, PRESS START</p>
+        <h2 class="contact-title">Want to team up?</h2>
+        <p class="contact-sub">Open to hands-on senior engineering roles, collaborations and interesting problems.</p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:wgerizal@gmail.com" data-contact><span>✉</span><div><small>EMAIL</small>wgerizal@gmail.com</div></a>
+          <a class="contact-item" href="https://linkedin.com/in/wage-rizal-solichin" target="_blank" rel="noopener" data-contact><span>in</span><div><small>LINKEDIN</small>wage-rizal-solichin</div></a>
+          <a class="contact-item" href="https://wa.me/6285603117133" target="_blank" rel="noopener" data-contact><span>☎</span><div><small>WHATSAPP</small>Chat on WhatsApp</div></a>
+          <a class="contact-item" href="https://socialrush.id" target="_blank" rel="noopener" data-contact><span>🏰</span><div><small>CURRENT GUILD</small>socialrush.id</div></a>
+        </div>
+        <a class="btn btn-gold btn-lg" href="cv/Wage_Rizal_Solichin_CV.pdf" download="Wage_Rizal_Solichin_CV.pdf" data-download>
+          <span class="chest">🎁</span> Claim Loot: Download CV (PDF)
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Wage Rizal Solichin · Built with HTML, CSS &amp; a little JS</p>
+    <p class="hint">Psst… try the <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd> code. <button class="link-btn" id="resetBtn">Reset progress</button></p>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
